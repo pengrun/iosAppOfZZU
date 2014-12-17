@@ -6,6 +6,7 @@
   Copyright (c) 2012年 umeng.com. All rights reserved.
  */
 
+//test
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #define UMFBCheckFinishedNotification @"UMFBCheckFinishedNotification"
