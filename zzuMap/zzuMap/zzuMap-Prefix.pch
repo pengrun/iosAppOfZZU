@@ -1,0 +1,29 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#import "Common.h"
+
+#define kDeviceWidth [UIScreen mainScreen].bounds.size.width
+#define KDeviceHeight [UIScreen mainScreen].bounds.size.height
+
+#define SuggestURLString(count,page) [NSString stringWithFormat:@"http://m2.qiushibaike.com/article/list/suggest?count=%d&page=%d",count,page]
+#define LastestURLString(count,page) [NSString stringWithFormat:@"http://m2.qiushibaike.com/article/list/latest?count=%d&page=%d",count,page]
+#define DayURLString(count,page) [NSString stringWithFormat:@"http://m2.qiushibaike.com/article/list/day?count=%d&page=%d",count,page]
+#define WeakURlString(count,page) [NSString stringWithFormat:@"http://m2.qiushibaike.com/article/list/week?count=%d&page=%d",count,page]
+#define MonthURLString(count,page) [NSString stringWithFormat:@"http://m2.qiushibaike.com/article/list/month?count=%d&page=%d",count,page]
+#define ImageURLString(count,page) [NSString stringWithFormat:@"http://m2.qiushibaike.com/article/list/images?count=%d&page=%d",count,page]
+#define CommentsURLString(ID) [NSString stringWithFormat:@"http://m2.qiushibaike.com/article/%@/comments?count=500&page=1",ID]
