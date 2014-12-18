@@ -60,27 +60,30 @@
     //设置颜色和界面颜色相同
     view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"jiemian.png"]];
     
-//坐上角"返回"的按钮
-    
+    //左上角"返回"的按钮
     UIButton *backButton=[[UIButton alloc]initWithFrame:CGRectMake(0, 25, 40, 40)];
-    
-    [backButton setTitle:@"返回" forState:UIControlStateNormal];
- 
+    [backButton setImage:[UIImage imageNamed:@"back_pressed.png"] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(backButtonTarge) forControlEvents:UIControlEventTouchUpInside];
    [self.view addSubview:backButton];
     
-//空教室显示
+    //空教室显示
+    UILabel *lbl_show=[[UILabel alloc]initWithFrame:CGRectMake(80, 25, 100, 40)];
+    lbl_show.textAlignment=NSTextAlignmentCenter;
+    lbl_show.text=@"查空教室";
+    [self.view addSubview:lbl_show];
+    
+    //空教室显示
     UILabel *labelNoteLeft=[[UILabel alloc]initWithFrame:CGRectMake(0, 120, 320/2, 30)];
     labelNoteLeft.textAlignment=NSTextAlignmentCenter;
     labelNoteLeft.text=@"空教室";
-//容纳人数显示
+    //容纳人数显示
     UILabel *labelNoteRight=[[UILabel alloc]initWithFrame:CGRectMake(320/2, 120, 320/2, 30)];
     labelNoteRight.textAlignment=NSTextAlignmentCenter;
     labelNoteRight.text=@"可容纳人数";
     
     [self.view addSubview:labelNoteLeft];
     [self.view addSubview:labelNoteRight];
-//分割线
+    //分割线
     UILabel *labelLine1=[[UILabel alloc]initWithFrame:CGRectMake(0, 150, 320, 1)];
     labelLine1.backgroundColor=[UIColor grayColor];
     [self.view addSubview:labelLine1];

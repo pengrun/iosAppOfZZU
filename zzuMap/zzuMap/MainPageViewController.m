@@ -45,8 +45,6 @@
     [scrollView setPagingEnabled:YES];
     [self.view addSubview:scrollView];
     
-    
-    
     //新闻按钮
     UIImage *newsImage=[UIImage imageNamed:@"news"];
     UIButton *btn_news=[[UIButton alloc]initWithFrame:CGRectMake(320/2-35, 80, 70, 70)];
@@ -105,7 +103,7 @@
         {
             MyLog(@"新闻通告");
             NewsNoticeViewController *news=[[NewsNoticeViewController alloc]init];
-                                            [self.navigationController pushViewController:news animated:YES];
+            [self.navigationController pushViewController:news animated:YES];
             break;
         }
 
@@ -146,8 +144,7 @@
             MyLog(@"更多模块");
             MoreViewController *moreVC=[[MoreViewController alloc]init];
             [self.navigationController pushViewController:moreVC animated:YES];
-
-            
+    
         }
             break;
             
@@ -155,23 +152,6 @@
             break;
     }
 }
-
-
-
-#pragma mark -滚动视图代理方法
-//完成减速意味着页面切换完成
-
-//-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-//{
-//    int pageNumber=scrollView.contentOffset.y/568;
-////    [self changeValue:pageNumber];
-//    [pageControll setCurrentPage:pageNumber];
-//}
-//
-//-(void)changeValue:(NSInteger )i
-//{
-//    NSLog(@"changeValue%d",i);
-//}
 
 - (void)didReceiveMemoryWarning
 {

@@ -7,21 +7,37 @@
 //
 
 #import "AppDelegate.h"
-#import "MainViewController.h"
 #import <MAMapKit/MAMapKit.h>
 #import "APIKey.h"
 #import "UIColorAdditions.h"
 #import "MainPageViewController.h"
-#import "MainViewController.h"
-#import "EmptyRoomViewController.h"
-#import "SGPageViewController.h"
-#import "NewsNoticeViewController.h"
-#import "MoreViewController.h"
 
 @implementation AppDelegate
+
 @synthesize root;
 
-#pragma mark -高德地图APIKey配置
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor  = [UIColor whiteColor];
+    
+    /*
+     * 执行配置高德地图
+     */
+   
+         [self configureAPIKey];
+    
+    
+   /*
+    *主页面
+    */
+    MainPageViewController *mainPage=[[MainPageViewController alloc]init];
+    UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:mainPage];
+    self.window.rootViewController=nav;
+    [self.window makeKeyAndVisible];
+    return YES;
+}
+
 /*
  *配置高德地图
  */
@@ -40,20 +56,6 @@
 }
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor  = [UIColor whiteColor];
-    //执行配置高德地图
-    [self configureAPIKey];
-    
-    //主页面
-    MainPageViewController *mainPage=[[MainPageViewController alloc]init];
-    UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:mainPage];
-    self.window.rootViewController=nav;
-    [self.window makeKeyAndVisible];
-    return YES;
-}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

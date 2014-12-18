@@ -10,7 +10,9 @@
 
 @interface MainPageViewController : UIViewController<UIScrollViewDelegate>
 {
-    UIScrollView *scrollView;
-    UIPageControl *pageControll;
+     //滚动视图
+    
+     UIScrollView *scrollView;
+
 }
 @end

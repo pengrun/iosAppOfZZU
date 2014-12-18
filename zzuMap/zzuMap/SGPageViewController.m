@@ -7,7 +7,6 @@
 //
 
 #import "SGPageViewController.h"
-//#import "GradeResuleViewController.h"
 #import "AppDelegate.h"
 #import "UIColorAdditions.h"
 @interface SGPageViewController ()
@@ -27,14 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    
     appdelegate=[UIApplication sharedApplication].delegate;
     self.navigationController.navigationBarHidden=YES;
     [self.view setBackgroundColor:[UIColor clearColor]];
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    
-//    [self createLeftItem:@"" font:15 normalImage:@"back_normal.png" highLightedImage:@"back_pressed.png"];
     
     /*
      *标题 查成绩
@@ -49,9 +44,8 @@
     /*
      * 定义返回按钮
      */
-    UIButton *btn_back=[[UIButton alloc]initWithFrame:CGRectMake(15, 25, 40, 40)];
+    UIButton *btn_back=[[UIButton alloc]initWithFrame:CGRectMake(0, 25, 40, 40)];
     [btn_back setImage:[UIImage imageNamed:@"back_normal.png"] forState:UIControlStateNormal];
-    [btn_back setImage:[UIImage imageNamed:@"back_pressed.png"] forState:UIControlStateHighlighted];
     [btn_back addTarget:self action:@selector(leftItem) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn_back];
     
